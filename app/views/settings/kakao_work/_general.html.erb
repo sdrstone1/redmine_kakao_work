@@ -1,4 +1,5 @@
 <p>
   <label>App Key</label>
-  <%= text_field_tag 'settings[app_key]', AppKeys.app_key%>
+<%  AppKeys.where(:id => 0).each do |webhook| %>
+  <%= text_field_tag 'settings[app_key]', webhook.app_key %>
 </p>
