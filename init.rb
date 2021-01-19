@@ -7,7 +7,8 @@ Redmine::Plugin.register :redmine_kakao_work do
   version '0.0.5'
   url 'https://github.com/sdrstone1/redmine_kakao_work'
   author_url 'https://kollhong.com/'
-  settings partial: 'settings/kakao_work/general'
+  settings :default => { 'app_key' => "" },
+    partial: 'settings/kakao_work/general'
 
   permission :manage_hook, {:webhook_settings => [:index, :show, :update, :create, :destroy]}, :require => :member
 end
