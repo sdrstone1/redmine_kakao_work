@@ -98,8 +98,14 @@ module RedmineWebhook
             :data => {
               :content => "### 위키 페이지 #{controller.action_name}\r\n\r\n" +
               "#### 프로젝트 #{project}의 #{page.title}\r\n" +
-              "**한줄설명** : #{comments}\r\n" +
-              "#{text}",
+              "**한줄설명** : #{comments}\r\n",
+              :type => "markdown"
+            }
+          },
+          { 
+            :type => "section",
+            :data => {
+              :content => "#{text}",
               :type => "markdown"
             }
           }
